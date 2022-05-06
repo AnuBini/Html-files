@@ -1,0 +1,53 @@
+{% extends 'Staff/index.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nomination</title>
+</head>
+<body>
+    <form  method="post">
+        <h3 align="center">Nomination Approval</h3>
+        <table width="650" border="0" class="table table-hover">
+          <tr bgcolor="#4b0082">
+              <th width="5"  style="color: white">S.No</th>
+              <th width="50"  style="color: white">Reg_no</th>
+              <th width="80"  style="color: white">Candidate </th>
+              <th width="141"  style="color: white">Post</th>
+              <th width="100"  style="color: white">Approval </th>
+              <th width="130"  style="color: white">Suspension </th>
+               <th width="60"  style="color: white">Arrears</th>
+               <th width="130"  style="color: white">Attendance(%)</th>
+
+          </tr>
+          {% for i in data %}
+                  <tr>
+
+                      <td>{{ loop.index }}</td>
+                      <td><input type="text" name="rno" value="{{ i['Reg_no'] }}" readonly  style="border:none;outline:none;background-color: transparent;resize: none" ></td>
+                      <td>{{ i['s_name']  }}</td>
+                      <td> {{ i['Post_name'] }}</td>
+                      <td> {{ i['Approval_status']}}</td>
+                      <td><p><group>
+                          <input type="radio" name="radio" id="yes" value="yes" />
+                          <label for="yes">Yes</label>&nbsp&nbsp&nbsp
+                            <input type="radio" name="radio" id="no" value="no"  />
+                            <label for="No">No
+                            </label>
+                            </group>
+                          </p>
+                      </td>
+                      <td><input type="number" name="arrear" min="0" max="36"> </td>
+                      <td><input type="number" name="atten" min="0" max="100"></td>
+                      <td><input type="submit" class="btn btn-primary" value="Submit"></td>
+                  </tr>
+            {% endfor %}
+
+
+        </table>
+
+    </form>
+</body>
+</html>
+{% endblock %}
