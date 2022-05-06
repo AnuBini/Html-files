@@ -1,0 +1,139 @@
+{% extends 'Student/index.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body style="margin:0 auto">
+<center>
+<form action="/vote" method="post">
+
+    <h3 >VOTE HERE</h3><br>
+    <table align="center" width="1500" border="0" class="table table-hover">
+          <tr bgcolor="#4b0082">
+            <th width="750" style="color: white">Post Name</th>
+            <th width="750" style="color: white">Candidate Name</th>
+          </tr>
+
+
+        <tr>
+
+         <th>Chairperson</th>
+         <td><label for="chairperson"></label>
+             <select name="chairperson" id="chairperson">
+                <option value="none" selected disabled hidden>Select an Option</option>
+                {% for i in data %}
+                    {% if i['post']=='Chairperson' %}
+                        <option value="{{ i['id'] }}">{{ i['name'] }}</option>
+                     {% endif %}
+                {% endfor %}
+             </select>
+
+         </td>
+        </tr>
+      <tr>
+
+        <th>Vice Chairperson</th>
+        <td><label for="v_chairperson"></label>
+            <select name="v_chairperson" id="v_chairperson">
+                <option value="none" selected disabled hidden>Select an Option</option>
+
+                {% for i in data %}
+                     {% if i['post']=='Vice Chairperson' %}
+                        <option value="{{ i['id'] }}">{{ i['name'] }}</option>
+                     {% endif %}
+                {% endfor %}
+            </select>
+
+        </td>
+      </tr>
+      <tr>
+        <th>General Secretary</th>
+        <td><label for="secretary"></label>
+            <select name="secretary" id="secretary" >
+                <option value="none" selected disabled hidden>Select an Option</option>
+
+                {% for i in data %}
+                    {% if i['post']=='General Secretary' %}
+                        <option value="{{ i['id'] }}">{{ i['name'] }}</option>
+                    {% endif %}
+                 {% endfor %}
+            </select>
+
+        <td>
+      </tr>
+      <tr>
+        <th>Magazine Editor</th>
+        <td><label for="editor"></label>
+            <select name="editor" id="editor">
+               <option value="none" selected disabled hidden>Select an Option</option>
+
+                {% for i in data %}
+                    {% if i['post']=='Magazine Editor' %}
+                         <option value="{{ i['id'] }}">{{ i['name'] }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+
+        </td>
+      </tr>
+      <tr>
+        <th>Fine Arts Secretary</th>
+        <td><label for="artsSec"></label>
+            <select name="artsSec" id="artsSec">
+                <option value="none" selected disabled hidden>Select an Option</option>
+
+                {% for i in data %}
+                    {% if i['post']=='Fine Arts Secretary' %}
+                         <option value="{{ i['id'] }}">{{ i['name'] }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+
+        </td>
+      </tr>
+      <tr>
+        <th>Councilor of University Union</th>
+        <td><label for="councilor"></label>
+            <select name="councilor" id="councilor">
+                <option value="none" selected disabled hidden>Select an Option</option>
+
+                {% for i in data %}
+                    {% if i['post']=='Councilor' %}
+                        <option value="{{ i['id'] }}">{{ i['name'] }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+
+        </td>
+      </tr>
+      <tr>
+        <th>Reperesentitive of Girls</th>
+        <td><label for="girlrep"></label>
+            <select name="girlrep" id="girlrep">
+                <option value="none" selected disabled hidden>Select an Option</option>
+
+                {% for i in data %}
+                    {% if i['post']=='Reperesentitive of Girls' %}
+                        <option value="{{ i['id'] }}">{{ i['name'] }}</option>
+                    {% endif %}
+                 {% endfor %}
+            </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td width="600">&nbsp;</td>
+        <td width="900">
+          <input type="submit" name="submit" id="sub" value="VOTE" class="btn btn-primary" />&nbsp;
+
+           </tr>
+    </table>
+</form>
+</center>
+</body>
+</html>
+{% endblock %}
