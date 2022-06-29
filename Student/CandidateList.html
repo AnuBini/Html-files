@@ -1,0 +1,136 @@
+{% extends 'Student/index.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Candidate List</title>
+</head>
+<body>
+<h3 align="center">
+    Candidate List
+  </h3>
+    <table align="center" width="700" border="1" class="table table-hover">
+
+  <tr bgcolor="#4b0082">
+      <th width="150" scope="col" style="color: white">&nbsp;Post Name</th>
+      <th width="125" scope="col" style="color: white">&nbsp; Candidate Id</th>
+      <th width="173" scope="col" style="color: white">&nbsp; Candidate Name</th>
+      <th width="190"  style="color: white"> Department</th>
+  </tr>
+     <tr style="border:none">
+         <th style="border:none">Chairperson</th>
+         {% for i in data %}
+                    {% if i['post']=='Chairperson' %}
+
+
+                                <td> {{ i['id'] }}</td>
+                                <td>&nbsp;{{ i['name'] }}</td>
+                                <td> {{ i['dept'] }}</td>
+                            <tr style="border:none">
+                                 <td style="border:none"></td>
+                    {% endif %}
+         {% endfor %}
+     </tr>
+        <tr style="border:none">
+             <th style="border:none">Vice Chairperson</th>
+             {% for i in data %}
+                        {% if i['post']=='Vice Chairperson' %}
+
+
+                                    <td> {{ i['id'] }}</td>
+                                    <td>&nbsp;{{ i['name'] }}</td>
+                                    <td> {{ i['dept'] }}</td>
+                                <tr style="border:none">
+                                     <td style="border:none"></td>
+                        {% endif %}
+             {% endfor %}
+     </tr>
+     <tr style="border:none">
+             <th style="border:none">General Secretary</th>
+             {% for i in data %}
+                        {% if i['post']=='General Secretary' %}
+
+
+                                    <td> {{ i['id'] }}</td>
+                                    <td>&nbsp;{{ i['name'] }}</td>
+                                    <td> {{ i['dept'] }}</td>
+                                <tr style="border:none">
+                                     <td style="border:none"></td>
+                        {% endif %}
+             {% endfor %}
+     </tr>
+
+{#        {% for i in data %}#}
+{#                {% if i['post']=='General Secretary' %}#}
+{#                    <tr>#}
+{#                        <td>General Secretary</td>#}
+{#                        <td> {{ i['id'] }}</td>#}
+{#                        <td>&nbsp;{{ i['name'] }}</td>#}
+{#                        <td> {{ i['dept'] }}</td></tr>#}
+{#                {% endif %}#}
+{#       {% endfor %}#}
+        <tr style="border:none">
+             <th style="border:none" >Magazine Editor</th>
+             {% for i in data %}
+                        {% if i['post']=='Magazine Editor' %}
+
+
+                                    <td> {{ i['id'] }}</td>
+                                    <td>&nbsp;{{ i['name'] }}</td>
+                                    <td> {{ i['dept'] }}</td>
+                                <tr style="border:none">
+                                     <td style="border:none"></td>
+                        {% endif %}
+             {% endfor %}
+     </tr>
+
+          <tr style="border:none">
+             <th style="border:none">Fine Arts Secretary</th>
+             {% for i in data %}
+                        {% if i['post']=='Fine Arts Secretary' %}
+
+
+                                    <td> {{ i['id'] }}</td>
+                                    <td>&nbsp;{{ i['name'] }}</td>
+                                    <td> {{ i['dept'] }}</td>
+                                <tr style="border:none">
+                                     <td style="border:none"></td>
+                        {% endif %}
+             {% endfor %}
+     </tr>
+        <tr style="border:none">
+             <th style="border:none">Reperesentitive of Girls</th>
+             {% for i in data %}
+                        {% if i['post']=='Reperesentitive of Girls' %}
+
+
+                                    <td> {{ i['id'] }}</td>
+                                    <td>&nbsp;{{ i['name'] }}</td>
+                                    <td> {{ i['dept'] }}</td>
+                                <tr style="border:none">
+                                     <td style="border:none"></td>
+                        {% endif %}
+             {% endfor %}
+     </tr>
+    <tr style="border:none">
+             <th style="border:none">Councilor</th>
+             {% for i in data %}
+                        {% if i['post']=='Councilor' %}
+
+
+                                    <td> {{ i['id'] }}</td>
+                                    <td>&nbsp;{{ i['name'] }}</td>
+                                    <td> {{ i['dept'] }}</td>
+                                <tr style="border:none">
+                                     <td style="border:none"></td>
+                        {% endif %}
+             {% endfor %}
+     </tr>
+
+</table>
+
+</body>
+</html>
+
+{% endblock %}

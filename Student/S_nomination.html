@@ -1,0 +1,77 @@
+{% extends 'Student/index.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Nomination</title>
+
+</head>
+
+<body>
+
+
+<form  method="post">
+
+    {% if data3 %}
+        <form method="post" >
+        <h3 align="center">Your Nomination is Here...</h3>
+        <table  border="0" class="table table-hover">
+        <tr><tr></tr></tr><tr></tr><tr></tr>
+        <tr>
+            <th>Candidate Id</th>
+            <th>Post name</th>
+            <th>Approval Status</th>
+        </tr>
+
+        <tr>
+            <td>{{ data3['Candidate_id']}}</td>
+            <td>{{ data3['Post_name']}}</td>
+            <td>{{ data3['Approval_status']}}</td>
+        </tr>
+       {% if data3['Approval_status']=="Pending" %}
+            <tr>
+                <td></td>
+                <td><a href="/withdraw/{{ data3['Candidate_id']}}" class="btn btn-primary">Withdraw </a> </td>
+                <td></td>
+            </tr>
+       {% endif %}
+        </table>
+    </form>
+
+{% else %}
+        <h3 align="center">NOMINATION</h3>
+        <table align="center" width="363" border="0">
+        <tr></tr>
+
+        <tr><br/></tr>
+
+        <tr>
+            <th>Post Name :</th>
+            <td><label for="postname"></label>
+              <select name="postname" id="postname">
+                  <option>Chairperson</option>
+                  <option>Vice Chairperson</option>
+                  <option>General Secretary</option>
+                  <option>Magazine Editor</option>
+                  <option>Reperesentitive of Girls</option>
+                  <option>Fine Arts Secretary</option>
+                   <option>Councilor</option>
+              </select></td>
+         </tr>
+        <tr><br/></tr>
+            <tr>
+            <td></td>
+            <td><br><br><input type="submit" name="submit" id="submit" value="Submit" class="btn btn-primary" /> </td>
+            </tr>
+        </table>
+        <br/>
+
+
+
+{% endif %}
+
+</form>
+</body>
+</html>
+{% endblock %}
