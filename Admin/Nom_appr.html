@@ -1,0 +1,49 @@
+{% extends 'Admin/index.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+</head>
+
+<body>
+<form action="" method="get">
+<h3 align="center">Nomination Approval</h3>
+<table width="750" border="1" class="table table-hover">
+  <tr bgcolor="#4b0082">
+      <th width="50"  style="color: white">S.No</th>
+    <th width="126"  style="color: white">Reg_no</th>
+    <th width="107"  style="color: white">Candidate</th>
+    <th width="141"  style="color: white">Post</th>
+    <th width="146"  style="color: white">Suspension</th>
+     <th width="141"  style="color: white">Arrears</th>
+    <th width="146"  style="color: white">Attendance(%)</th>
+     <th width="145"  style="color: white">Approval Status</th>
+  </tr>
+  {% for i in data %}
+  <tr>
+    <td>{{ loop.index }}</td>
+    <td>{{ i['Reg_no'] }}</td>
+    <td>{{ i['s_name']  }}</td>
+    <td> {{ i['Post_name'] }}&nbsp;</td>
+    <td>&nbsp;{{ i['Suspension_status'] }}</td>
+    <td>&nbsp;{{ i['Arrears'] }}</td>
+    <td>&nbsp;{{ i['Attendance'] }}</td>
+      {% if i['Approval_status']== 'Pending' %}
+      <td><a href="/approve_nomination/{{ i['Candidate_id']}}" class="btn btn-primary">Approve</a><br />
+          {% else %}
+      <td> {{ i['Approval_status']}}</td>
+      {% endif %}
+          <!--<a href="">Reject</a>-->
+      </td>
+  </tr>
+    {% endfor %}
+
+</table>
+
+</form>
+</body>
+</html>
+{% endblock %}

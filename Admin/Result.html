@@ -1,0 +1,80 @@
+{% extends 'Admin/index.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+</head>
+
+<body>
+<form action="" method="get"></form>
+ <h3 align="center">
+      ELECTION RESULT
+    </h3>
+  <table width="700" border="0" class="table table-hover">
+
+      <tr></tr>
+    <tr bgcolor="#4b0082">
+      <th width="400" style="color: white">Post Name</th>
+      <th width="131"  style="color: white">Candidate Name</th>
+      <th width="120"  style="color: white">Department</th>
+      <th width="108"  style="color: white">Vote Count</th>
+     
+    </tr>
+    <tr>
+      <th>1.Chair person</th>
+      <td>{{ data1.s_name }}</td>
+      <td>&nbsp;{{ data1.Dept_name }}</td>
+      <td>{{ c_vote }}</td>
+
+    </tr>
+    <tr>
+      <th>2.Vice Chair person</th>
+      <td>{{ data2.s_name }}</td>
+      <td>&nbsp;{{ data2.Dept_name }}</td>
+      <td>{{ v_vote1 }}</td>
+      
+    </tr>
+    <tr>
+      <th>3.General Secratary</th>
+      <td>{{ data3.s_name }}</td>
+      <td>&nbsp;{{ data3.Dept_name }}</td>
+      <td>{{ vote3 }}</td>
+      
+    </tr>
+    <tr>
+      <th>4.Magazine Editor</th>
+      <td>&nbsp;{{ data4.s_name }}</td>
+      <td>&nbsp;{{ data4.Dept_name }}</td>
+      <td>&nbsp;{{ vote4 }}</td>
+
+    </tr>
+    <tr>
+      <th>5.Fine Arts Secretary</th>
+      <td>{{ data7.s_name }}</td>
+      <td>&nbsp;{{ data7.Dept_name }}</td>
+      <td>&nbsp;{{ vote7 }}</td>
+     
+    </tr>
+    <tr>
+      <th>6.Councilor of University Union</th>
+      <td>&nbsp;{{ data6.s_name }}</td>
+      <td>&nbsp;{{ data6.Dept_name }}</td>
+      <td>&nbsp;{{ vote6 }}</td>
+
+    </tr>
+    <tr>
+      <th>7.Representitive of Girls</th>
+      <td>&nbsp;{{ data5.s_name }}</td>
+      <td>&nbsp;{{ data5.Dept_name }}</td>
+      <td>{{ vote5 }}</td>
+      
+    </tr>
+   
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

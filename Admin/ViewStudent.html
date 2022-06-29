@@ -1,0 +1,48 @@
+{% extends 'Admin/index.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+</head>
+
+<body>
+<form action="/view_student" method="post">
+<h3 align="center">Student Details</h3>
+<table class="table table-hover">
+    <tr>
+        <td>Department name:</td>
+        <td><input type="text" name="textfield" class="form-control" placeholder="Search here"></td>
+        <td><input type="submit" name="search" value="Search" class="btn btn-primary"></td>
+    </tr>
+
+
+</table>
+<table width="770" border="1" class="table table-hover">
+
+  <tr bgcolor="#4b0082">
+    <th width="93"  style="color: white">Sl.No</th>
+    <th width="92"  style="color: white">Reg_no</th>
+    <th width="117"  style="color: white">Student Name</th>
+    <th width="65"  style="color: white">Course</th>
+    <th width="200"  style="color: white">Department</th>
+    <th width="72"  style="color: white">Image</th>
+  </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{ loop.index }}</td>
+         <td>{{ i['regno'] }}</td>
+         <td>{{ i['name']  }}</td>
+        <td> {{ i['course'] }}&nbsp;</td>
+        <td>&nbsp;{{ i['dept'] }}</td>
+        <td><img src=" {{ i['image'] }}" width="100px" height="100px"/></td>
+    </tr>
+     {% endfor %}
+</table>
+
+</form>
+</body>
+</html>
+{% endblock %}
